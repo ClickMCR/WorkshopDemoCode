@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>API Demo!</title>
+    </head>
+
+    <body>
+        <h1>Show me the data!</h1>
+
+        <!--<img src="https://placekitten.com/900/620">-->
+
+        <button onclick="getImages()">Get random images</button>
+    </body>
+
+    <script>
+
+        function getImages() {
+            fetch("https://dog.ceo/api/breeds/image/random/10")
+            .then(response => response.json())
+            .then(data => showDogs(data));
+        }
+
+        function showDogs(data) {
+            var dogArray = data.message;
+
+            /*
+            for(var i = 0; i < dogArray.length; i++) {
+                console.log(dogArray[i]);
+            }
+            */
+
+            for(var dog of dogArray) {
+                var img = document.createElement("img");
+                img.src = dog;
+                document.body.appendChild(img);
+            }
+        }
+
+    </script>
+</html>

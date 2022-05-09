@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Responsive test</title>
+
+        <script>
+
+            console.error("Hello!")
+        </script>
+    </head>
+
+    <body>
+        <div id="pageContent">
+            <h1 style="margin:20px">Sonic!</h1>
+            <div class="row">
+                <div class="column">
+                    <p>Sonic the Hedgehog is the titular main protagonist of the Sonic the Hedgehog series and Sega's mascot. He is an anthropomorphic hedgehog born with the ability to run faster than the speed of sound, hence his name, and possesses lightning-fast reflexes to match his speed. As his species implies, Sonic can also roll up into a concussive ball, primarily to attack enemies.</p>
+                </div>
+                <div id="imageColumn" class="column">
+                    <img id="sonicPic" src="sonic.png">
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
+
+<style>
+    #pageContent {
+        margin: auto;
+        max-width: 900px;
+    }
+
+    .row {
+        display: flex;
+    }
+
+    .column {
+        flex: 50%;
+        margin: 20px;
+        background-color: white;
+    }
+
+    #sonicPic {
+        max-width: 100%;
+    }
+
+    @media only screen and (max-width: 500px) {
+        #imageColumn {
+            display: none
+        }
+    }
+</style>

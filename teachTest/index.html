@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<body>
+    <h1 id="bigHeader">A quick demo</h1>
+
+    <h2 id="subHeader">This has changed.</h2>
+
+    <button onClick="doButtonPress()">Click this.</button>
+    <button id="secondButton">Or, click this.</button>
+
+    <p class="someCoolClass">This is a sample line.</p>
+    <p class="someCoolClass">This is another sample line.</p>
+    <p class="someCoolClass">This is yet another slightly longer sample line.</p>
+</body>
+
+<script>
+    // EXPLAIN THE DOM
+    // EXPLAIN USE CASES FOR THIS:
+    // - making things dynamically
+    // - avoiding repetition
+    // - working with data
+    // - etc
+
+    // access a thing on the DOM
+    var headerDemo = document.getElementById("bigHeader");
+    
+    // make a text change 
+    headerDemo.innerHTML = "Wow cool this works!"
+
+    // change the style of an element
+    var subHeaderDemo = document.getElementById("subHeader");
+    subHeaderDemo.style.color = "#FF0000";
+    subHeaderDemo.style.fontFamily = "Arial";
+
+    // find things by class
+    var listOfThings = document.getElementsByClassName("someCoolClass");
+    
+    // loop over what you found
+    for (var item of listOfThings) {
+        console.log(item);
+    }
+
+    // create something new
+    var newThing = document.createElement("p");
+    newThing.innerText = "But this is something entirely new.";
+    document.body.appendChild(newThing);
+
+    // button using DOM tag
+    function doButtonPress() {
+        //console.log("Boo!");
+        alert("boo!");
+    }
+
+    // button using JS
+    var newButton = document.getElementById("secondButton");
+    newButton.addEventListener("click", doButtonPress);
+    
+</script>

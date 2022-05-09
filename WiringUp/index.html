@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Wiring up!</title>
+    </head>
+
+    <body>
+        <h1 id="bigHeader">A quick demo</h1>
+
+        <p>This is a line of text</p>
+        <p class="testClass">This is a line of text</p>
+
+        <button onClick="onButtonClicked()">Click me!</button>
+
+        <button id="myCoolButton">Or, click this</button>
+    </body>
+
+    <script>
+
+        // get a single element from the HTML
+        var myHeader = document.getElementById("bigHeader");
+        myHeader.innerHTML = "Wow, this works!";
+    
+        // mess with the element's CSS directly
+        myHeader.style.color = "#FF0000";
+        myHeader.style.fontFamily = "Arial";
+
+
+        // get a list of all the matching elements using a particular class
+        var myItems = document.getElementsByClassName("testClass");
+        
+        // loop through using a new-style ES6 loop: 
+        for(item of myItems) {
+            item.style.color = "#00FF00";
+            item.style.background = "#0000FF";
+            item.innerHTML = "This element has changed";
+        }
+
+        
+        // add ten new HTML elements to the page (using an old style for-loop)
+        for(var i = 0; i < 10; i++) {
+            var newThing = document.createElement("p");
+            newThing.innerHTML = "This is line " + (i+1);
+            document.body.appendChild(newThing);
+        }
+
+        // make our second button clickable (the first one has it in the HTML inlined)
+        var myButton = document.getElementById("myCoolButton");
+        myButton.addEventListener("click", onButtonClicked);
+
+        function onButtonClicked() {
+            alert("boo!");
+        }
+
+    </script>
+</html>

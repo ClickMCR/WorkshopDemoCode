@@ -1,0 +1,40 @@
+body {
+    background-color:darksalmon;
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+}
+
+.header {
+    padding: 30px;
+    background-color: white;
+    text-align: center;
+}
+
+.topnav {
+    overflow: hidden;
+    background-color: grey;
+}
+
+.topnav a {
+    float: left;
+    display: block;
+    color:white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+a {
+    color: green;
+}
+
+.topnav a:hover {
+    background-color: crimson;
+    color: black;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0px;
+    right: 20px;
+}
